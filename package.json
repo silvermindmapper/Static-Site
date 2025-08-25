@@ -1,0 +1,18 @@
+{
+  "name": "static-site",
+  "version": "1.0.0",
+  "description": "A simple static site with Markdown support",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx http-server dist -p 3000 -o",
+    "dev": "npm run build && npm run serve"
+  },
+  "dependencies": {
+    "marked": "^4.3.0",
+    "front-matter": "^4.0.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

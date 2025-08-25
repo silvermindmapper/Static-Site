@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="/" class="logo">My Site</a>
+                <ul class="nav-links">
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/blog" >Blog</a></li>
+                    <li><a href="/about" >About</a></li>
+                    <li><a href="/faq" class="active">FAQ</a></li>
+                    <li><a href="/contact" >Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<h2 id="general-questions">General Questions</h2>
+<h3 id="what-is-this-website">What is this website?</h3>
+<p>This is a static website built with simple tools. It demonstrates how to create a fast, maintainable website without complex frameworks.</p>
+<h3 id="why-use-a-static-site">Why use a static site?</h3>
+<p>Static sites are fast, secure, and easy to maintain. They load quickly and are perfect for content-focused websites.</p>
+<h3 id="is-this-really-no-framework">Is this really &quot;no framework&quot;?</h3>
+<p>Yes! We use vanilla HTML, CSS, and JavaScript. The only &quot;framework&quot; is a simple build script that converts Markdown to HTML.</p>
+<h2 id="technical-questions">Technical Questions</h2>
+<h3 id="how-do-i-add-new-content">How do I add new content?</h3>
+<p>Simply create a new Markdown file in the <code>content</code> directory and run <code>npm run build</code>. The build script will automatically convert it to HTML.</p>
+<h3 id="can-i-customize-the-design">Can I customize the design?</h3>
+<p>Absolutely! The CSS is in <code>dist/styles.css</code> and can be easily modified. The build process preserves your customizations.</p>
+<h3 id="how-do-i-add-a-new-page">How do I add a new page?</h3>
+<ol>
+<li>Create a Markdown file in the <code>content</code> directory</li>
+<li>Add the page to the navigation in <code>build.js</code></li>
+<li>Run <code>npm run build</code></li>
+</ol>
+<h3 id="what-about-images-and-other-assets">What about images and other assets?</h3>
+<p>Place them in the <code>assets</code> directory. They&#39;ll be automatically copied to <code>dist/assets</code> during the build process.</p>
+<h2 id="blog-questions">Blog Questions</h2>
+<h3 id="how-do-i-write-a-blog-post">How do I write a blog post?</h3>
+<ol>
+<li>Create a new Markdown file in <code>content/blog/</code></li>
+<li>Add front matter with title, date, and excerpt</li>
+<li>Write your content in Markdown</li>
+<li>Run <code>npm run build</code></li>
+</ol>
+<h3 id="can-i-use-html-in-blog-posts">Can I use HTML in blog posts?</h3>
+<p>Yes, Markdown supports inline HTML, so you can use HTML tags when needed.</p>
+<h2 id="support">Support</h2>
+<h3 id="i-found-a-bug">I found a bug!</h3>
+<p>Please report any issues through our contact form or create an issue in our repository.</p>
+<h3 id="can-i-contribute">Can I contribute?</h3>
+<p>Absolutely! We welcome contributions. Feel free to submit pull requests or suggest improvements.</p>
+
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 My Site. Built with simple tools.</p>
+    </footer>
+    
+    <script src="/script.js"></script>
+</body>
+</html>
