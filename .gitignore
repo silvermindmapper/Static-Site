@@ -1,0 +1,11 @@
+# Don't index SpecStory auto-save files, but allow explicit context inclusion via @ references
+# (Handled in .cursorindexingignore)
+
+# Don't index node_modules (dependencies)
+node_modules/**
+
+# Don't index build artifacts
+dist/**
+
+# Don't index package lock files (they're auto-generated)
+package-lock.json
