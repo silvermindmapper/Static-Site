@@ -1,167 +1,100 @@
-# Static Site with HTML, CSS, JavaScript and Simple Node Libraries
+# Static Site Generator
 
-A simple, fast static website generator that converts Markdown to HTML without complex frameworks. Perfect for blogs, documentation sites, and simple websites.
+A simple static site generator that converts Markdown files to HTML with a clean, responsive design.
 
 ## Features
 
-- ✅ **Simple Landing Page** - Clean, responsive homepage
-- ✅ **Blog System** - Markdown-based blog with automatic generation
-- ✅ **Template System** - Consistent HTML structure across all pages
-- ✅ **Markdown Support** - Write content in simple Markdown
-- ✅ **Responsive Design** - Works on all devices
-- ✅ **Fast Performance** - Static files load quickly
-- ✅ **Easy Maintenance** - Simple file structure and build process
+- **Markdown Support**: Write content in Markdown with front matter
+- **Blog System**: Automatic blog post generation with index
+- **Responsive Design**: Mobile-friendly layout
+- **GitHub Pages**: Automatic deployment via GitHub Actions
+- **Simple Build Process**: One command to build the entire site
+
+## Quick Start
+
+### Development
+
+1. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+2. **Edit content** in the `content/` directory:
+   - `content/index.md` - Home page
+   - `content/about.md` - About page
+   - `content/contact.md` - Contact page
+   - `content/faq.md` - FAQ page
+   - `content/blog/` - Blog posts
+
+3. **Build the site**:
+   ```bash
+   npm run build
+   ```
+
+4. **Preview locally**:
+   ```bash
+   npm run serve
+   ```
+   Then visit `http://localhost:3000`
+
+### Content Format
+
+Each Markdown file can include front matter (metadata) at the top:
+
+```markdown
+---
+title: Your Page Title
+excerpt: Brief description (for blog posts)
+date: 2024-01-15
+---
+
+# Your Content
+
+Write your content in **Markdown** format.
+```
+
+## Deployment
+
+### GitHub Pages (Automatic)
+
+1. **Push to GitHub**: The site automatically deploys when you push to the `main` branch
+2. **Enable GitHub Pages**: Go to your repository Settings → Pages → Source: "Deploy from a branch" → Branch: "gh-pages"
+3. **Your site will be available at**: `https://yourusername.github.io/your-repo-name`
+
+### Manual Deployment
+
+1. Build the site: `npm run build`
+2. Upload the contents of the `dist/` folder to your web server
 
 ## Project Structure
 
 ```
-Static-Site/
-├── content/                 # Markdown content files
-│   ├── index.md            # Landing page
-│   ├── about.md            # About page
-│   ├── faq.md              # FAQ page
-│   └── blog/               # Blog posts
-│       ├── first-post.md
-│       └── markdown-tips.md
-├── dist/                   # Generated HTML files (created by build)
-│   ├── styles.css          # CSS styles
-│   ├── script.js           # JavaScript functionality
-│   └── assets/             # Static assets
-├── assets/                  # Source assets (images, documents, etc.)
-├── build.js                # Build script
-├── package.json            # Dependencies and scripts
-└── README.md               # This file
+├── content/          # Source Markdown files
+│   ├── index.md      # Home page
+│   ├── about.md      # About page
+│   ├── contact.md    # Contact page
+│   ├── faq.md        # FAQ page
+│   └── blog/         # Blog posts
+├── dist/             # Built site (auto-generated)
+├── assets/           # Static assets (CSS, JS, images)
+├── build.js          # Build script
+└── package.json      # Dependencies and scripts
 ```
-
-## Quick Start
-
-### 1. Install Dependencies
-
-```bash
-npm install
-```
-
-### 2. Build the Site
-
-```bash
-npm run build
-```
-
-This will:
-- Convert all Markdown files to HTML
-- Generate the blog index
-- Copy assets to the dist folder
-- Create a complete static site in the `dist/` directory
-
-### 3. View Your Site
-
-```bash
-npm run serve
-```
-
-This starts a local server at `http://localhost:3000`
-
-### 4. Development Workflow
-
-```bash
-npm run dev
-```
-
-This builds the site and opens it in your browser automatically.
-
-## Adding Content
-
-### New Pages
-
-1. Create a new Markdown file in the `content/` directory
-2. Add front matter with a title:
-   ```markdown
-   ---
-   title: Page Title
-   ---
-   
-   # Your Content Here
-   ```
-3. Add the page to the navigation in `build.js`
-4. Run `npm run build`
-
-### Blog Posts
-
-1. Create a new Markdown file in `content/blog/`
-2. Add front matter:
-   ```markdown
-   ---
-   title: Post Title
-   date: 2024-01-15
-   excerpt: Brief description of the post
-   ---
-   
-   # Your Blog Post Content
-   ```
-3. Run `npm run build`
-
-### Images and Assets
-
-1. Place files in the `assets/` directory
-2. Reference them in Markdown: `![Alt text](assets/filename.jpg)`
-3. Run `npm run build` to copy them to the dist folder
 
 ## Customization
 
-### Styling
+- **Styling**: Edit `dist/styles.css` (will be overwritten on build)
+- **Template**: Modify the `createHTMLTemplate` function in `build.js`
+- **Navigation**: Update the navigation links in `build.js`
 
-Edit `dist/styles.css` to customize the appearance. The build process preserves your changes.
+## Scripts
 
-### Layout
-
-Modify the `createHTMLTemplate` function in `build.js` to change the HTML structure.
-
-### Navigation
-
-Update the navigation links in the `createHTMLTemplate` function in `build.js`.
-
-## Available Scripts
-
-- `npm run build` - Build the static site
-- `npm run serve` - Start a local development server
-- `npm run dev` - Build and serve the site
+- `npm run build` - Build the site
+- `npm run serve` - Serve the built site locally
+- `npm run dev` - Build and serve in one command
 
 ## Dependencies
 
-- **marked** - Markdown to HTML converter
-- **front-matter** - Parse YAML front matter from Markdown
-- **http-server** - Simple local development server
-
-## Why This Approach?
-
-- **No Framework Lock-in** - Pure HTML, CSS, and JavaScript
-- **Fast Performance** - Static files load quickly
-- **Easy to Deploy** - Just upload the `dist/` folder to any web server
-- **Simple Maintenance** - Easy to understand and modify
-- **Version Control Friendly** - Markdown files are easy to track and merge
-- **Cost Effective** - Can be hosted on free services like GitHub Pages, Netlify, etc.
-
-## Deployment
-
-Simply upload the contents of the `dist/` directory to any web server or static hosting service:
-
-- **GitHub Pages** - Push to a GitHub repository and enable Pages
-- **Netlify** - Drag and drop the dist folder
-- **Vercel** - Connect your repository for automatic deployments
-- **Traditional Hosting** - Upload via FTP/SFTP
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test with `npm run build && npm run serve`
-5. Submit a pull request
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-Built with ❤️ and simplicity in mind.
+- `marked` - Markdown to HTML conversion
+- `front-matter` - Parse front matter from Markdown files
+- `http-server` - Local development server

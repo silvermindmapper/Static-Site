@@ -1,7 +1,7 @@
 ---
-title: Welcome to Our Blog
-date: 2024-01-15
-excerpt: Our first blog post introducing the new website and explaining our approach to web development.
+title: Welcome to Remembrance
+date: 2025-08-27
+excerpt: Where you will remember yourself. 
 ---
 
 # Welcome to Our Blog
