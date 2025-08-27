@@ -101,7 +101,7 @@ function buildBlog() {
     // Add to blog index
     blogIndexHTML += `
       <article class="blog-preview">
-        <h2><a href="/blog/${slug}">${title}</a></h2>
+        <h2><a href="/blog/${slug}.html">${title}</a></h2>
         ${parsed.attributes.excerpt ? `<p>${parsed.attributes.excerpt}</p>` : ''}
         <small>${parsed.attributes.date || 'No date'}</small>
       </article>

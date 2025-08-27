@@ -626,3 +626,162 @@ The workflow is now ready! Just push your code and enable GitHub Pages in your r
 
 ---
 
+_**User**_
+
+Actually, the whole point of using GitHub Actions is because GitHub Pages does not allow us to deploy anything but the root branch. My understanding is that in order to deploy from @dist/, we have to create Github Action workflow
+
+---
+
+_**Assistant**_
+
+You're absolutely correct! I apologize for the confusion in my previous explanation. You're right that GitHub Pages has limitations:
+
+## GitHub Pages Limitations:
+- **Free accounts**: Can only deploy from the root branch (`main`/`master`) or a `/docs` folder
+- **Cannot deploy from subdirectories** like `dist/` directly
+- **Cannot deploy from different branches** without GitHub Actions
+
+## Why GitHub Actions is Essential:
+
+The GitHub Actions workflow I created solves this by:
+
+1. **Building on GitHub's servers** when you push to `main`
+2. **Creating a separate `gh-pages` branch** with just the built files
+3. **Deploying from that branch** to GitHub Pages
+
+## The Workflow Process:
+
+```yaml
+- name: Deploy to GitHub Pages
+  uses: peaceiris/actions-gh-pages@v3
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./dist  # Takes contents of dist/ and puts them in gh-pages branch
+```
+
+This action:
+- Takes everything from your `dist/` folder
+- Creates/updates a `gh-pages` branch with only those files
+- GitHub Pages then serves from the `gh-pages` branch
+
+## So the Complete Flow is:
+
+1. **You push to `main`** (with your source code)
+2. **GitHub Actions builds** the site (runs `node build.js`)
+3. **GitHub Actions deploys** `dist/` contents to `gh-pages` branch
+4. **GitHub Pages serves** from the `gh-pages` branch
+
+You're absolutely right - without GitHub Actions, you'd be stuck with either:
+- Putting your built files directly in your main branch (messy)
+- Using the `/docs` folder approach (less flexible)
+- Manual deployment
+
+The GitHub Actions approach is the clean, automated solution!
+
+---
+
+_**User**_
+
+yes can we implement this?
+
+---
+
+_**Assistant**_
+
+Absolutely! Let's implement this step by step. I can see from your terminal output that you have some 404 errors for blog posts, so let's fix that too while we're at it.
+
+First, let's check if you have a Git repository initialized and push everything to GitHub:
+
+
+---
+
+```bash
+cd /Users/shenghuang/Coding/Static-Site && git status
+```
+
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % cd /Users/shenghuang/Coding/Static-Site && git status           c
+d /Users/shenghuang/Coding/Static-Site && git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+```
+
+---
+
+Great! You already have a Git repository. Let's check if the GitHub Actions workflow file was created:
+
+
+---
+
+<details>
+            <summary>Listed directory .github • **1** results</summary>
+        
+| Name |
+|-------|
+| 📁 `workflows` |
+
+</details>
+
+---
+
+<details>
+            <summary>Listed directory .github/workflows • **1** results</summary>
+        
+| Name |
+|-------|
+| 📄 `deploy.yml` |
+
+</details>
+
+---
+
+Perfect! The workflow file is already there. Now let's fix the blog post URL issue I noticed in your terminal output. The problem is that the blog posts are being linked as `/blog/first-post` but they should be `/blog/first-post.html`. Let me fix the build script:
+
+
+---
+
+Read file: build.js
+
+---
+
+I found the issue! On line 103, the blog links are missing the `.html` extension. Let me fix that:
+
+
+---
+
+<details><summary>Edit file: build.js</summary>
+
+undefined
+
+**Chunk 1**
+Lines added: 1, lines removed: 1
+
+```diff
+@@ -102,5 +102,5 @@
+      blogIndexHTML += `
+        <article class="blog-preview">
+-         <h2><a href="/blog/${slug}">${title}</a></h2>
++         <h2><a href="/blog/${slug}.html">${title}</a></h2>
+          ${parsed.attributes.excerpt ? `<p>${parsed.attributes.excerpt}</p>` : ''}
+          <small>${parsed.attributes.date || 'No date'}</small>
+```
+
+</details>
+
+---
+
+Now let's rebuild the site to fix the blog links:
+
+
+---
+
+
+
+---
+
+
+
+---
+
