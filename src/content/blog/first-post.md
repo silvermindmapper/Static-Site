@@ -1,7 +1,9 @@
 ---
 title: Welcome to Remembrance
 date: 2025-08-27
-excerpt: Where you will remember yourself. 
+excerpt: Where you will remember yourself.
+author: BASB Team
+tags: [welcome, introduction, philosophy]
 ---
 
 # Welcome to Our Blog

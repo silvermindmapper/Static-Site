@@ -3,44 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog - BASB</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="nav-container">
-                <a href="/" class="logo">My Site</a>
-                <ul class="nav-links">
-                    <li><a href="/" >Home</a></li>
-                    <li><a href="/blog" class="active">Blog</a></li>
-                    <li><a href="/about" >About</a></li>
-                    <li><a href="/faq" >FAQ</a></li>
-                    <li><a href="/contact" >Contact</a></li>
-                </ul>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="/" class="logo">BASB</a>
+                <span class="tagline">building a second brain.</span>
             </div>
-        </nav>
-    </header>
+            <ul class="nav-links">
+                <li><a href="/app">APP</a></li>
+                <li class="dropdown">
+                    <a href="/books">BOOKS <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="/courses">COURSES <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li><a href="/membership">MEMBERSHIP</a></li>
+                <li><a href="/blog/">BLOG</a></li>
+                <li class="dropdown">
+                    <a href="/events">EVENTS <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="/resources">RESOURCES <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li><a href="/wall-of-love">WALL OF LOVE</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
     
-    <main>
-        <h1>Blog</h1><div class="blog-list">
-      <article class="blog-preview">
-        <h2><a href="/blog/first-post.html">Welcome to Remembrance</a></h2>
-        <p>Where you will remember yourself.</p>
-        <small>Tue Aug 26 2025 17:00:00 GMT-0700 (Pacific Daylight Time)</small>
+    <main class="blog-index-main">
+        <div class="blog-index-container">
+            <header class="blog-index-header">
+                <h1 class="blog-index-title">Blog</h1>
+                <p class="blog-index-subtitle">Thoughts, insights, and reflections on building a second brain</p>
+            </header>
+            
+            <div class="blog-grid">
+                
+      <article class="blog-card featured">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop" alt="How to Remember Yourself">
+        </div>
+        <div class="blog-card-content">
+          <h2 class="blog-card-title">
+            <a href="/blog/how-to-remember-yourself.html">How to Remember Yourself</a>
+          </h2>
+          
+          <div class="blog-card-meta">
+            <span class="blog-card-date">AUG 27 • SHENG</span>
+          </div>
+        </div>
       </article>
     
-      <article class="blog-preview">
-        <h2><a href="/blog/markdown-tips.html">Markdown Tips for Better Content</a></h2>
-        <p>Learn some useful Markdown techniques to make your content more engaging and readable.</p>
-        <small>Fri Jan 19 2024 16:00:00 GMT-0800 (Pacific Standard Time)</small>
+      <article class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="Welcome to Remembrance">
+        </div>
+        <div class="blog-card-content">
+          <h2 class="blog-card-title">
+            <a href="/blog/first-post.html">Welcome to Remembrance</a>
+          </h2>
+          <p class="blog-card-excerpt">Where you will remember yourself.</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">AUG 26 • BASB TEAM</span>
+          </div>
+        </div>
       </article>
+    
+      <article class="blog-card">
+        <div class="blog-card-image">
+          <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?w=600&h=400&fit=crop" alt="Essential Markdown Tips for Blog Writing">
+        </div>
+        <div class="blog-card-content">
+          <h2 class="blog-card-title">
+            <a href="/blog/markdown-tips.html">Essential Markdown Tips for Blog Writing</a>
+          </h2>
+          <p class="blog-card-excerpt">Learn the essential Markdown syntax to create beautiful, well-formatted blog posts quickly and easily.</p>
+          <div class="blog-card-meta">
+            <span class="blog-card-date">AUG 26 • BASB TEAM</span>
+          </div>
+        </div>
+      </article>
+    
+            </div>
+            <div class="convertkit-wrapper">
+                <div class="convertkit-signup">
+    <div class="convertkit-container">
+        <div class="convertkit-content">
+            <h3 class="convertkit-title">Get the Second Brain Quickstart Guide</h3>
+            <p class="convertkit-description">
+                Start building your Second Brain, increase your productivity, and lead a more fulfilling life with more ease and less stress.
+            </p>
+            
+            <!-- ConvertKit Official Form -->
+            <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+            <form action="https://app.kit.com/forms/7857760/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="7857760" data-uid="d6c17c0bbf" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Thank you. One last step: check your email to confirm your subscription and get your AI Amplify Starter Pack! 🦾 If you don't get it right away, check your spam or promotions folder.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800">
+                <div data-style="clean">
+                    <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                    <div data-element="fields" data-stacked="false" class="seva-fields formkit-fields">
+                        <div class="formkit-field">
+                            <input class="formkit-input" aria-label="First Name" name="fields[first_name]" required="" placeholder="First Name" type="text">
+                        </div>
+                        <div class="formkit-field">
+                            <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Email Address" required="" type="email">
+                        </div>
+                        <button data-element="submit" class="formkit-submit">
+                            <div class="formkit-spinner">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <span>SEND ME THE GOODIES</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            
+            <p class="convertkit-disclaimer">
+                We respect your privacy. Unsubscribe at any time.
+            </p>
+        </div>
     </div>
+</div>
+
+            </div>
+        </div>
     </main>
     
-    <footer>
-        <p>&copy; 2024 My Site. Built with simple tools.</p>
-    </footer>
+    <div class="chat-widget">
+    <div class="chat-bubble">
+        <span class="chat-close">×</span>
+        <span class="chat-text">Hi. Need any help?</span>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 BASB. Building a Second Brain.</p>
+</footer>
+
+<script src="/script.js"></script>
+
     
     <script src="/script.js"></script>
 </body>

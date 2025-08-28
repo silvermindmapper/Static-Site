@@ -777,11 +777,137 @@ Now let's rebuild the site to fix the blog links:
 
 ---
 
+```bash
+npm run build
+```
+
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % npm run build
+
+> static-site@1.0.0 build
+> node build.js
+
+Building static site...
+Built: dist/index.html
+Built: dist/about.html
+Built: dist/faq.html
+Built: dist/contact.html
+Built: dist/blog/first-post.html
+Built: dist/blog/markdown-tips.html
+Built: dist/blog/index.html
+Copied assets
+Build complete!
+```
+
+---
+
+Great! Now let's commit all our changes and push to GitHub to trigger the GitHub Actions deployment:
 
 
 ---
 
+```bash
+git add .
+```
 
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % git add .
+```
+
+---
+
+```bash
+git commit -m "Add GitHub Pages deployment workflow and fix blog links"
+```
+
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % git commit -m "Add GitHub Pages deployment workflow and fix blog 
+links"
+[main 2dab6ff] Add GitHub Pages deployment workflow and fix blog links
+ 4 files changed, 163 insertions(+), 4 deletions(-)
+```
+
+---
+
+```bash
+git push origin main
+```
+
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % git push origin main
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 10 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 2.51 KiB | 2.51 MiB/s, done.
+Total 10 (delta 8), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (8/8), completed with 8 local objects.
+To https://github.com/silvermindmapper/Static-Site.git
+   3b71685..2dab6ff  main -> main
+```
+
+---
+
+Perfect! 🎉 The code has been pushed to GitHub. Now let's check if the GitHub Actions workflow is running:
+
+
+---
+
+```bash
+echo "GitHub Actions should now be running. You can check the status at: https://github.com/silvermindmapper/Static-Site/actions"
+```
+
+```
+shenghuang@Sheng-MacBook-Pro Static-Site % echo "GitHub Actions should now be running. You can check the sta
+tus at: https://github.com/silvermindmapper/Static-Site/actions"
+GitHub Actions should now be running. You can check the status at: https://github.com/silvermindmapper/Stati
+c-Site/actions
+shenghuang@Sheng-MacBook-Pro Static-Site %
+```
+
+---
+
+## ✅ Implementation Complete!
+
+Here's what we've accomplished:
+
+### 1. **Fixed Blog Links Issue**
+- Updated `build.js` to include `.html` extensions in blog post links
+- This fixes the 404 errors you were seeing in the terminal
+
+### 2. **GitHub Actions Workflow**
+- Created `.github/workflows/deploy.yml` that automatically:
+  - Builds your site when you push to `main`
+  - Deploys the `dist/` contents to a `gh-pages` branch
+  - Enables GitHub Pages to serve from that branch
+
+### 3. **Pushed Everything to GitHub**
+- All changes are now live on your repository
+- GitHub Actions should be running automatically
+
+## Next Steps:
+
+1. **Check GitHub Actions Status**:
+   - Go to: https://github.com/silvermindmapper/Static-Site/actions
+   - You should see a workflow running called "Deploy to GitHub Pages"
+
+2. **Enable GitHub Pages**:
+   - Go to your repository Settings → Pages
+   - Under "Source", select "Deploy from a branch"
+   - Choose "gh-pages" branch
+   - Click Save
+
+3. **Your site will be live at**:
+   - `https://silvermindmapper.github.io/Static-Site/`
+
+## How It Works Now:
+
+- **Edit content** in `content/` directory
+- **Push to GitHub**: `git push origin main`
+- **GitHub Actions automatically** builds and deploys
+- **Your site updates** within a few minutes
+
+The deployment is now fully automated! 🚀
 
 ---
 

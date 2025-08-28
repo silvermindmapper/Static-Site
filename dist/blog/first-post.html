@@ -3,27 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Remembrance</title>
+    <title>Welcome to Remembrance - BASB Blog</title>
+    <meta name="description" content="<p class="blog-excerpt">Where you will remember yourself.</p>">
     <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav>
-            <div class="nav-container">
-                <a href="/" class="logo">My Site</a>
-                <ul class="nav-links">
-                    <li><a href="/" >Home</a></li>
-                    <li><a href="/blog" class="active">Blog</a></li>
-                    <li><a href="/about" >About</a></li>
-                    <li><a href="/faq" >FAQ</a></li>
-                    <li><a href="/contact" >Contact</a></li>
-                </ul>
+    <nav>
+        <div class="nav-container">
+            <div class="logo-section">
+                <a href="/" class="logo">BASB</a>
+                <span class="tagline">building a second brain.</span>
             </div>
-        </nav>
-    </header>
+            <ul class="nav-links">
+                <li><a href="/app">APP</a></li>
+                <li class="dropdown">
+                    <a href="/books">BOOKS <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="/courses">COURSES <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li><a href="/membership">MEMBERSHIP</a></li>
+                <li><a href="/blog/">BLOG</a></li>
+                <li class="dropdown">
+                    <a href="/events">EVENTS <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li class="dropdown">
+                    <a href="/resources">RESOURCES <span class="dropdown-arrow">▼</span></a>
+                </li>
+                <li><a href="/wall-of-love">WALL OF LOVE</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
     
-    <main>
-        <h1 id="welcome-to-our-blog">Welcome to Our Blog</h1>
+    <main class="blog-post">
+        <div class="blog-container">
+            <nav class="blog-breadcrumb">
+                <a href="/">Home</a> &gt; 
+                <a href="/blog/">Blog</a> &gt; 
+                <span>{{title}}</span>
+            </nav>
+            
+            <article class="blog-content">
+                <header class="blog-header">
+                    <h1 class="blog-title">{{title}}</h1>
+                    <div class="blog-meta">
+                        <span class="blog-date">Tue, Aug 26, 2025</span>
+                        <span class="blog-author">by BASB Team</span>
+                    </div>
+                    {{excerpt}}
+                </header>
+                
+                <div class="blog-body">
+                    <h1 id="welcome-to-our-blog">Welcome to Our Blog</h1>
 <p>This is our first blog post! We&#39;re excited to share our journey of building a simple, fast website without the complexity of modern frameworks.</p>
 <h2 id="why-we-chose-simplicity">Why We Chose Simplicity</h2>
 <p>In today&#39;s web development landscape, it&#39;s easy to get caught up in the latest frameworks and tools. While these have their place, we believe that for many websites, simpler is better.</p>
@@ -46,12 +83,32 @@
 <hr>
 <p><em>Published on January 15, 2024</em></p>
 
+                </div>
+                
+                <footer class="blog-footer">
+                    <div class="blog-tags">
+                        <span class="blog-tag">welcome</span><span class="blog-tag">introduction</span><span class="blog-tag">philosophy</span>
+                    </div>
+                    <div class="blog-navigation">
+                        <a href="/blog/" class="back-to-blog">← Back to Blog</a>
+                    </div>
+                </footer>
+            </article>
+        </div>
     </main>
     
-    <footer>
-        <p>&copy; 2024 My Site. Built with simple tools.</p>
-    </footer>
-    
-    <script src="/script.js"></script>
+    <div class="chat-widget">
+    <div class="chat-bubble">
+        <span class="chat-close">×</span>
+        <span class="chat-text">Hi. Need any help?</span>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 BASB. Building a Second Brain.</p>
+</footer>
+
+<script src="/script.js"></script>
+
 </body>
 </html>

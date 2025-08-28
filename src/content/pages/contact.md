@@ -4,7 +4,7 @@ title: Contact
 
 # Get In Touch
 
-Have a question, suggestion, or just want to say hello? We'd love to hear from you!
+If you need anything, just give me a holler!
 
 ## Contact Form
 

@@ -1,18 +1,26 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "A simple static site with Markdown support",
+  "description": "A simple static site with blog functionality",
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "serve": "npx http-server dist -p 3000 -o",
-    "dev": "npm run build && npm run serve"
+    "new-post": "node create-post.js",
+    "dev": "node build.js && echo 'Site built! Open dist/index.html in your browser'",
+    "serve": "node build.js && cd dist && python3 -m http.server 8000",
+    "serve-node": "node build.js && npx http-server dist -p 8000 -o",
+    "edit-blog": "open src/templates/blog.html",
+    "edit-header": "open src/templates/partials/header.html",
+    "edit-footer": "open src/templates/partials/footer.html",
+    "edit-page-template": "open src/templates/base.html",
+    "edit-blog-post-template": "open src/templates/blog-post.html",
+    "edit-base-template": "open src/templates/base.html"
   },
+  "keywords": ["static-site", "blog", "markdown"],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "marked": "^4.3.0",
-    "front-matter": "^4.0.2"
-  },
-  "devDependencies": {
-    "http-server": "^14.1.1"
+    "marked": "^4.0.0",
+    "front-matter": "^4.0.0"
   }
 }

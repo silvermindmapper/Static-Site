@@ -4,7 +4,7 @@ title: About
 
 # About Us
 
-We believe in keeping things simple. This website demonstrates that you don't need complex frameworks to create a beautiful, functional website.
+This is a text content just to see how that works to see if it gets pushed.
 
 ## Our Philosophy
 
